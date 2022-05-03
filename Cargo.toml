@@ -1,0 +1,33 @@
+[package]
+name = "ntrust-native"
+description = "Pure rust implementation of the PQC scheme Saber"
+authors = ["Patrick Thorbauer <patrick.thorbauer@student.tugraz.at>", "Lukas Prokop <admin@lukas-prokop.at>"]
+repository = "https://github.com/prokls/ntrust-native"
+readme = "README.md"
+license = "MIT"
+version = "1.0.0"
+edition = "2021"
+keywords = ["pqc", "post-quantum", "cryptography", "lattice"]
+categories = ["cryptography"]
+
+[features]
+default = []
+ntruhps2048509 = ['ntruhps']
+ntruhps2048677 = ['ntruhps']
+ntruhps4096821 = ['ntruhps']
+ntruhrss701 = ['ntruhrss']
+ntruhps = []
+ntruhrss = []
+
+[dependencies]
+tiny-keccak = { version = "2.0.2", features = ["sha3"] }
+aes = "0.7.5"
+hex = "0.4"
+
+[[bench]]
+name = "kem_api"
+harness = false
+
+[dev-dependencies]
+criterion = "0.3"
+criterion-cycles-per-byte = "0.1.2"
