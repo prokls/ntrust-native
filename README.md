@@ -129,6 +129,7 @@ On [github](https://github.com/prokls/ntrust-native).
 
 ## Changelog
 
+* **2022-05-04 version 1.0.1:** documentation fix
 * **2022-05-03 version 1.0.0:** public release
 
 ## Where can I ask you to fix a bug?
