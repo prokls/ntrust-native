@@ -40,6 +40,8 @@ use ntrust_native::AesState;
 use ntrust_native::{crypto_kem_dec, crypto_kem_enc, crypto_kem_keypair};
 use ntrust_native::{CRYPTO_BYTES, CRYPTO_CIPHERTEXTBYTES, CRYPTO_PUBLICKEYBYTES, CRYPTO_SECRETKEYBYTES};
 
+use std::error;
+
 fn main() -> Result<(), Box<dyn error::Error>> {
   let mut rng = AesState::new();
   let mut pk = [0u8; CRYPTO_PUBLICKEYBYTES];
@@ -53,6 +55,8 @@ fn main() -> Result<(), Box<dyn error::Error>> {
   crypto_kem_dec(&mut ss_alice, &ct, &sk)?;
 
   assert_eq!(ss_bob, ss_alice);
+
+  Ok(())
 }
 ```
 
